@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">蓝牙遥控器</string>
+
+    <!-- 连接状态文本 -->
+    <string name="status_not_connected">● 未连接</string>
+    <string name="status_initializing">◌ 初始化中…</string>
+    <string name="status_advertising">◎ 广播中，等待连接…</string>
+    <string name="status_connected">✔ 已连接</string>
+    <string name="status_error">✘ 错误</string>
+
+    <!-- 按钮文本 -->
+    <string name="btn_start_advertising">开始广播</string>
+    <string name="btn_stop_advertising">停止广播</string>
+    <string name="btn_disconnect">断开连接</string>
+
+    <!-- 遥控器按键标签 -->
+    <string name="key_up">▲</string>
+    <string name="key_down">▼</string>
+    <string name="key_left">◄</string>
+    <string name="key_right">►</string>
+    <string name="key_ok">OK</string>
+    <string name="key_home">🏠</string>
+    <string name="key_back">←</string>
+    <string name="key_menu">☰</string>
+    <string name="key_vol_up">🔊+</string>
+    <string name="key_vol_down">🔉-</string>
+    <string name="key_mute">🔇</string>
+    <string name="key_play_pause">⏯</string>
+    <string name="key_power">⏻</string>
+
+    <!-- Toast 消息 -->
+    <string name="toast_connected">已连接到 %1$s</string>
+    <string name="toast_disconnected">设备已断开连接</string>
+    <string name="toast_error">错误：%1$s</string>
+
+    <!-- 错误消息 -->
+    <string name="error_not_connected">尚未连接设备，请先等待手机连接</string>
+    <string name="error_bt_not_supported">此设备不支持蓝牙</string>
+    <string name="error_bt_not_enabled">请先开启蓝牙</string>
+    <string name="error_permission_denied">未授予蓝牙权限，应用无法正常工作</string>
+</resources>

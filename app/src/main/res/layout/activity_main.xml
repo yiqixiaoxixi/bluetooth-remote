@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    虚拟蓝牙遥控器 UI 布局
+    整体采用深色背景，模拟真实遥控器外观
+
+    布局结构：
+    ┌─────────────────────────────┐
+    │      状态栏（连接状态）         │
+    ├─────────────────────────────┤
+    │        电源键（右上角）         │
+    ├─────────────────────────────┤
+    │  ▲                          │
+    │◄   ●   ►   （方向键 + OK）   │
+    │  ▼                          │
+    ├─────────────────────────────┤
+    │   Home     Back    Menu     │
+    ├─────────────────────────────┤
+    │   Vol+     Vol-    Mute     │
+    │        Play/Pause           │
+    ├─────────────────────────────┤
+    │      连接 / 断开按钮           │
+    └─────────────────────────────┘
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/remote_background"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ====================================================
+             顶部状态栏
+             ==================================================== -->
+        <LinearLayout
+            android:id="@+id/layout_status_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/status_bar_bg"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/status_not_connected"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:visibility="gone"
+                tools:text="Pixel 6 Pro"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="#37474F" />
+
+        <!-- ====================================================
+             电源键（顶部中间）
+             ==================================================== -->
+        <Button
+            android:id="@+id/btn_power"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_round"
+            android:backgroundTint="@color/btn_power_normal"
+            android:text="@string/key_power"
+            android:textColor="@color/text_on_button"
+            android:textSize="20sp"
+            android:elevation="4dp" />
+
+        <!-- ====================================================
+             方向键区域（十字布局 + 中间 OK 键）
+             ==================================================== -->
+        <RelativeLayout
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <!-- 上方向键 -->
+            <Button
+                android:id="@+id/btn_up"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/btn_round"
+                android:backgroundTint="@color/btn_nav_normal"
+                android:text="@string/key_up"
+                android:textColor="@color/text_on_button"
+                android:textSize="20sp"
+                android:elevation="4dp" />
+
+            <!-- 左方向键 -->
+            <Button
+                android:id="@+id/btn_left"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/btn_round"
+                android:backgroundTint="@color/btn_nav_normal"
+                android:text="@string/key_left"
+                android:textColor="@color/text_on_button"
+                android:textSize="20sp"
+                android:elevation="4dp" />
+
+            <!-- OK 键（中间） -->
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/btn_round"
+                android:backgroundTint="@color/btn_ok_normal"
+                android:text="@string/key_ok"
+                android:textColor="@color/text_on_button"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:elevation="6dp" />
+
+            <!-- 右方向键 -->
+            <Button
+                android:id="@+id/btn_right"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_round"
+                android:backgroundTint="@color/btn_nav_normal"
+                android:text="@string/key_right"
+                android:textColor="@color/text_on_button"
+                android:textSize="20sp"
+                android:elevation="4dp" />
+
+            <!-- 下方向键 -->
+            <Button
+                android:id="@+id/btn_down"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/btn_round"
+                android:backgroundTint="@color/btn_nav_normal"
+                android:text="@string/key_down"
+                android:textColor="@color/text_on_button"
+                android:textSize="20sp"
+                android:elevation="4dp" />
+        </RelativeLayout>
+
+        <!-- ====================================================
+             功能键区域：Home / Back / Menu
+             ==================================================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_home"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="6dp"
+                android:background="@drawable/btn_rect"
+                android:text="@string/key_home"
+                android:textColor="@color/text_on_button"
+                android:textSize="20sp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="6dp"
+                android:background="@drawable/btn_rect"
+                android:text="@string/key_back"
+                android:textColor="@color/text_on_button"
+                android:textSize="20sp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btn_menu"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="6dp"
+                android:background="@drawable/btn_rect"
+                android:text="@string/key_menu"
+                android:textColor="@color/text_on_button"
+                android:textSize="20sp"
+                android:elevation="4dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="16dp"
+            android:background="#37474F" />
+
+        <!-- ====================================================
+             多媒体键区域：音量 + 静音
+             ==================================================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_vol_up"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="6dp"
+                android:background="@drawable/btn_rect"
+                android:backgroundTint="@color/btn_media_normal"
+                android:text="@string/key_vol_up"
+                android:textColor="@color/text_on_button"
+                android:textSize="18sp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btn_vol_down"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="6dp"
+                android:background="@drawable/btn_rect"
+                android:backgroundTint="@color/btn_media_normal"
+                android:text="@string/key_vol_down"
+                android:textColor="@color/text_on_button"
+                android:textSize="18sp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btn_mute"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="6dp"
+                android:background="@drawable/btn_rect"
+                android:backgroundTint="@color/btn_media_normal"
+                android:text="@string/key_mute"
+                android:textColor="@color/text_on_button"
+                android:textSize="18sp"
+                android:elevation="4dp" />
+        </LinearLayout>
+
+        <!-- 播放/暂停（居中，单独一行） -->
+        <Button
+            android:id="@+id/btn_play_pause"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/btn_rect"
+            android:backgroundTint="@color/btn_media_normal"
+            android:text="@string/key_play_pause"
+            android:textColor="@color/text_on_button"
+            android:textSize="24sp"
+            android:elevation="4dp" />
+
+        <!-- ====================================================
+             底部连接/断开按钮
+             ==================================================== -->
+        <Button
+            android:id="@+id/btn_connect"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/btn_rect"
+            android:backgroundTint="@color/btn_connect_normal"
+            android:text="@string/btn_start_advertising"
+            android:textColor="@color/text_on_button"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:elevation="4dp" />
+
+    </LinearLayout>
+</ScrollView>

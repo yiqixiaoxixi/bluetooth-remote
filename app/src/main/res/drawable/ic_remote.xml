@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 应用图标：简单的遥控器 SVG 样式 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 背景 -->
+    <path
+        android:fillColor="#1A1A2E"
+        android:pathData="M0,0 L108,0 L108,108 L0,108 Z" />
+
+    <!-- 遥控器外形（圆角矩形） -->
+    <path
+        android:fillColor="#0F3460"
+        android:strokeColor="#E94560"
+        android:strokeWidth="2"
+        android:pathData="M36,18 Q36,14 40,14 L68,14 Q72,14 72,18 L72,90 Q72,94 68,94 L40,94 Q36,94 36,90 Z" />
+
+    <!-- OK 按钮（中心圆） -->
+    <path
+        android:fillColor="#E94560"
+        android:pathData="M54,52 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0" />
+
+    <!-- 方向键（十字） -->
+    <path
+        android:fillColor="#4DD0E1"
+        android:pathData="M52,38 L56,38 L56,46 L52,46 Z" />
+    <path
+        android:fillColor="#4DD0E1"
+        android:pathData="M52,58 L56,58 L56,66 L52,66 Z" />
+    <path
+        android:fillColor="#4DD0E1"
+        android:pathData="M42,50 L50,50 L50,54 L42,54 Z" />
+    <path
+        android:fillColor="#4DD0E1"
+        android:pathData="M58,50 L66,50 L66,54 L58,54 Z" />
+
+    <!-- 功能按钮点 -->
+    <path
+        android:fillColor="#533483"
+        android:pathData="M44,74 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+    <path
+        android:fillColor="#533483"
+        android:pathData="M54,74 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+    <path
+        android:fillColor="#533483"
+        android:pathData="M64,74 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+
+    <!-- 电源按钮 -->
+    <path
+        android:fillColor="#B71C1C"
+        android:pathData="M54,26 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+</vector>
