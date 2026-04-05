@@ -87,19 +87,18 @@ public class PermissionHelper {
     /**
      * 获取当前 Android 版本需要请求的权限列表
      *
-     * @return 权限字符串数组
+     * 注意：BLUETOOTH 和 BLUETOOTH_ADMIN 是普通权限（非危险权限），
+     * 无需运行时请求，AndroidManifest.xml 声明即可自动授予。
+     *
+     * @return 需要运行时申请的危险权限数组
      */
     private static String[] getRequiredPermissions() {
         List<String> permissions = new ArrayList<>();
 
-        // Android 9/10/11 基础蓝牙权限（普通权限，不需要运行时请求，但统一处理）
-        permissions.add(Manifest.permission.BLUETOOTH);
-        permissions.add(Manifest.permission.BLUETOOTH_ADMIN);
-
-        // BLE 扫描/广播在 Android 11 及以下需要位置权限
+        // BLE 扫描/广播在 Android 11 及以下需要位置权限（危险权限，需运行时请求）
         permissions.add(Manifest.permission.ACCESS_FINE_LOCATION);
 
-        // Android 12+ 新增的细粒度蓝牙权限
+        // Android 12+ 新增的细粒度蓝牙权限（危险权限，需运行时请求）
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             permissions.add(Manifest.permission.BLUETOOTH_CONNECT);
             permissions.add(Manifest.permission.BLUETOOTH_ADVERTISE);

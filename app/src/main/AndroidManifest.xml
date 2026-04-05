@@ -7,12 +7,9 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <!-- Android 12+ 蓝牙权限（向前兼容声明） -->
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"
-        android:maxSdkVersion="31" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"
-        android:maxSdkVersion="31" />
-    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
-        android:maxSdkVersion="31" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
 
     <!-- BLE 扫描需要位置权限（Android 11 及以下） -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
