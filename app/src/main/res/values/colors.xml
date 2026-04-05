@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用主色调 -->
+    <color name="colorPrimary">#1A1A2E</color>
+    <color name="colorPrimaryVariant">#16213E</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#E94560</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+
+    <!-- 背景色（深色遥控器风格） -->
+    <color name="remote_background">#1A1A2E</color>
+    <color name="remote_surface">#16213E</color>
+
+    <!-- 状态栏背景 -->
+    <color name="status_bar_bg">#0F3460</color>
+    <color name="status_connected">#4CAF50</color>
+    <color name="status_advertising">#FFC107</color>
+    <color name="status_disconnected">#9E9E9E</color>
+    <color name="status_error">#F44336</color>
+
+    <!-- 按钮颜色 -->
+    <color name="btn_nav_normal">#0F3460</color>
+    <color name="btn_nav_pressed">#E94560</color>
+    <color name="btn_ok_normal">#E94560</color>
+    <color name="btn_ok_pressed">#C0392B</color>
+    <color name="btn_func_normal">#533483</color>
+    <color name="btn_func_pressed">#7B52AB</color>
+    <color name="btn_media_normal">#0F3460</color>
+    <color name="btn_media_pressed">#1565C0</color>
+    <color name="btn_power_normal">#B71C1C</color>
+    <color name="btn_power_pressed">#D32F2F</color>
+    <color name="btn_connect_normal">#1B5E20</color>
+    <color name="btn_connect_pressed">#388E3C</color>
+
+    <!-- 文字颜色 -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0BEC5</color>
+    <color name="text_on_button">#FFFFFF</color>
+</resources>
